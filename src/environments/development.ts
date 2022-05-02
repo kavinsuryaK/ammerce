@@ -1,0 +1,37 @@
+import { ConfigInterface } from '@config'
+
+export default (): ConfigInterface => {
+	return {
+		PORT: parseInt(process.env.DEV_PORT),
+		ENVIRONMENT: 'development',
+
+		DB_CONNECTION_STRING: process.env.DB_CONNECTION_STRING,
+
+		SALT_ROUNDS: parseInt(process.env.SALT_ROUNDS),
+
+		JWT_SECRET: process.env.JWT_SECRET,
+		JWT_EXPIRY: process.env.JWT_EXPIRY,
+
+		MTV_NFT_TOKEN_ADDRESS: process.env.MTV_NFT_TOKEN_ADDRESS,
+		MTV_NTF_ALCHEMY_URL: process.env.MTV_NTF_ALCHEMY_URL,
+		MTV_IMPORT_NFT_URL: process.env.MTV_IMPORT_NFT_URL,
+		MTV_NFT_MARKETPLACE_ADDRESS: process.env.MTV_NFT_MARKETPLACE_ADDRESS,
+
+		SUPER_ADMIN_NAME: process.env.SUPER_ADMIN_NAME,
+		SUPER_ADMIN_EMAIL: process.env.SUPER_ADMIN_EMAIL,
+		SUPER_ADMIN_MOBILE: process.env.SUPER_ADMIN_MOBILE,
+		SUPER_ADMIN_COUNTRY_CODE: process.env.SUPER_ADMIN_COUNTRY_CODE,
+		SUPER_ADMIN_PASSWORD: process.env.SUPER_ADMIN_PASSWORD,
+
+		COLLECTION_USER_NAME: process.env.COLLECTION_USER_NAME,
+
+		TWILIO: {
+			SID: process.env.TWILIO_SID,
+			TOKEN: process.env.TWILIO_TOKEN,
+			FROM: process.env.TWILIO_FROM,
+		},
+
+		SENDGRID_API_KEY: process.env.SENDGRID_API_KEY,
+		SENDGRID_DEFAULT_SENDER_EMAIL: process.env.SENDGRID_DEFAULT_SENDER_EMAIL,
+	}
+}
